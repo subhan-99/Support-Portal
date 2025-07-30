@@ -10,7 +10,7 @@ public class User implements Serializable {
 
      @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
-     @Column(nullable = false,updatable = false)
+     @Column(nullable = false, updatable = false)
      private Long Id;
      private String userId;
      private String firstName;
@@ -19,17 +19,17 @@ public class User implements Serializable {
      private String password;
      private String email;
      private String profileImageUrl;
-     private Date LastLoginDate;
-     private Date getLastLoginDateDisplay;
+     private Date lastLoginDate;
+     private Date lastLoginDateDisplay;
      private Date joinDate;
      private String[] roles; // ROLE_USER{ read, edit }, ROLE_ADMIN {delete}
      private String[] authorities;
      private boolean isActive;
      private boolean isNotLocked;
 
-     public User(){}
+     public User() {}
 
-     public User(Long id, String userId, String firstName, String lastName, String password, String email, String profileImageUrl, Date lastLoginDate, Date getLastLoginDateDisplay, Date joinDate, String[] roles, String[] authorities, boolean isActive, boolean isNotLocked) {
+     public User(Long id, String userId, String firstName, String lastName, String username, String password, String email, String profileImageUrl, Date lastLoginDate, Date lastLoginDateDisplay, Date joinDate, String[] roles, String[] authorities, boolean isActive, boolean isNotLocked) {
           Id = id;
           this.userId = userId;
           this.firstName = firstName;
@@ -38,8 +38,8 @@ public class User implements Serializable {
           this.password = password;
           this.email = email;
           this.profileImageUrl = profileImageUrl;
-          this.LastLoginDate = lastLoginDate;
-          this.getLastLoginDateDisplay = getLastLoginDateDisplay;
+          this.lastLoginDate = lastLoginDate;
+          this.lastLoginDateDisplay = lastLoginDateDisplay;
           this.joinDate = joinDate;
           this.roles = roles;
           this.authorities = authorities;
@@ -112,19 +112,19 @@ public class User implements Serializable {
      }
 
      public Date getLastLoginDate() {
-          return LastLoginDate;
+          return lastLoginDate;
      }
 
      public void setLastLoginDate(Date lastLoginDate) {
-          LastLoginDate = lastLoginDate;
+          this.lastLoginDate = lastLoginDate;
      }
 
-     public Date getGetLastLoginDateDisplay() {
-          return getLastLoginDateDisplay;
+     public Date getLastLoginDateDisplay() {
+          return lastLoginDateDisplay;
      }
 
-     public void setGetLastLoginDateDisplay(Date getLastLoginDateDisplay) {
-          this.getLastLoginDateDisplay = getLastLoginDateDisplay;
+     public void setLastLoginDateDisplay(Date lastLoginDateDisplay) {
+          this.lastLoginDateDisplay = lastLoginDateDisplay;
      }
 
      public Date getJoinDate() {
@@ -167,5 +167,3 @@ public class User implements Serializable {
           isNotLocked = notLocked;
      }
 }
-
-
