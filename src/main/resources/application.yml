@@ -18,3 +18,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
 
+# mvc:
+#  throw-exception-if-no-found: true
+# resource:
+# add-mapping: false
